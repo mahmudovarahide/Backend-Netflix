@@ -6,11 +6,11 @@ const API_KEY = "9b40f3adb97e7234c2ea10b62783d862";
 export async function getTrendingMovie(req, res) {
     try {
         const data = await fetchFromTMDB(`${TMDB_BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=en-US`);
-        const limited = data.results.slice(0, 5);
+        const limited = data.results.slice(0, 5); 
         res.json({ success: true, content: limited });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: "Internal Server Error" });
+        res.status(500).json({ success: false, message: `Internal Server Error ${error}` });
     }
 }
 

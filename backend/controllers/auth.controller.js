@@ -3,6 +3,8 @@ import bcryptjs from "bcryptjs";
 import { generateTokenAndSetCookie } from "../utils/generateToken.js";
 
 export async function signup(req, res) {
+	console.log("Request Headers:", req.headers);
+	console.log("Request Body:", req.body);
 	try {
 		console.log("Request Body:", req.body); 
 		const { email, password } = req.body;
