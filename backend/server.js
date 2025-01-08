@@ -13,6 +13,7 @@ import { protectRoute } from "./middleware/protectRoute.js";
 
 const app = express();
 
+
 const PORT = ENV_VARS.PORT;
 
 const __dirname = path.resolve();
