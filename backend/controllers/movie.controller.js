@@ -20,7 +20,7 @@ export async function getNowPlayingMovies(req, res) {
         res.json({ success: true, content: data.results });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: "Internal Server Error" });
+        	res.status(500).json({ success: false, message: `Internal serverrr error ${error} ` });
     }
 }
 
@@ -35,7 +35,7 @@ export async function getMovieTrailer(req, res) {
         if (error.message.includes("404")) {
             return res.status(404).send({ success: false, message: "Trailer not found" });
         }
-        res.status(500).json({ success: false, message: "Internal Server Error" });
+        	res.status(500).json({ success: false, message: `Internal serverrr error ${error} ` });
     }
 }
 
@@ -49,7 +49,7 @@ export async function getMovieDetails(req, res) {
         if (error.message.includes("404")) {
             return res.status(404).send({ success: false, message: "Movie not found" });
         }
-        res.status(500).json({ success: false, message: "Internal Server Error" });
+        	res.status(500).json({ success: false, message: `Internal serverrr error ${error} ` });
     }
 }
 
@@ -60,7 +60,7 @@ export async function getSimilarMovies(req, res) {
         res.status(200).json({ success: true, content: data.results });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: "Internal Server Error" });
+        	res.status(500).json({ success: false, message: `Internal serverrr error ${error} ` });
     }
 }
 
@@ -71,7 +71,7 @@ export async function getRecommendationMovies(req, res) {
         res.status(200).json({ success: true, content: data.results });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: "Internal Server Error" });
+        	res.status(500).json({ success: false, message: `Internal serverrr error ${error} ` });
     }
 }
 
@@ -82,6 +82,6 @@ export async function getMoviesByCategory(req, res) {
         res.status(200).json({ success: true, content: data.results });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: "Internal Server Error" });
+        	res.status(500).json({ success: false, message: `Internal serverrr error ${error} ` });
     }
 }
