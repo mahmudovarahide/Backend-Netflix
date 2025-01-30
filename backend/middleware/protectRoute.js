@@ -23,10 +23,17 @@ export const protectRoute = async (req, res, next) => {
     }
 
     req.user = user;
-
     next();
   } catch (error) {
     console.log("Error in protectRoute middleware: ", error.message);
+
+    if (error.message === "jwt expired") {
+      return res.status(401).json({
+        success: false,
+        message: "Session expired. Please login again.",
+      });
+    }
+
     res.status(500).json({ success: false, message: `Internal server error: ${error.message}` });
   }
 };
